@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="customerApp">
+<head>
+    <title>Can Can Wonderland</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
+
+
+    <base href="/">
+
+</head>
+<body ng-controller="MainController as main">
+<header>
+    <div class="homeNav">
+        <a ng-hide='!main.user' href="/userControl">
+            <i class="fa fa-bars homeBars"></i>
+        </a>
+    </div>
+    <div>
+
+
+        <a href="/info">
+            <img src="/images/redYellow_sm.png" alt="Golf ball image, takes you to tee time registration" class="starLogo">
+        </a>
+        <div class='loginOut'>
+            <!--<a class="loginButton" href="/userControl" ng-hide="!main.user">MY ACCOUNT</a>-->
+            <a class="loginButton" ng-click="main.logout()" href="/login" ng-hide="main.user">LOGIN</a>
+            <a class="logoutButton" ng-click="main.logout()" href="/" ng-hide="!main.user">LOGOUT</a>
+        </div>
+    </div>
+</header>
+
+<img src="/images/CC_logo_can.png" alt="Can Can Wonderland logo" class="mainLogo" />
+
+
+    <!--///// I'm putting these here to make sure they are all the same size for now ////-->
+
+    <img src="/images/blueRed.png" alt="Can Can Wonderland logo" />
+    <img src="/images/redYellow.png" alt="Can Can Wonderland logo" />
+    <img src="/images/yellowBlue.png" alt="Can Can Wonderland logo" />
+
+<div id="customerViewMain">
+    <ng-view>
+
+
+    </ng-view>
+</div>
+<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+
+</body>
+</html>
